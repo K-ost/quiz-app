@@ -10,8 +10,9 @@ const Head = styled.header`
   @media screen and (max-width: 1020px) {
     height: 145px;
   }
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 750px) {
     height: 72px;
+    margin-bottom: 32px;
   }
 `;
 

@@ -5,14 +5,16 @@ type ContainerProps = {
 };
 
 const ContainerDiv = styled.div`
+  box-sizing: border-box;
   margin: 0 auto;
   max-width: 1200px;
-  padding: 0 20px;
+  padding: 0 20px 64px;
   width: 100%;
   @media screen and (max-width: 1020px) {
     width: 640px;
   }
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 750px) {
+    padding-bottom: 32px;
     width: auto;
   }
 `;

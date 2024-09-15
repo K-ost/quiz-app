@@ -11,7 +11,7 @@ export const useThemeStore = create<UseThemeStore>()(
   devtools(
     persist(
       (set) => ({
-        theme: "dark",
+        theme: "light",
         setTheme: (theme) => set(() => ({ theme })),
       }),
       { name: "bearStore" }

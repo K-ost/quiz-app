@@ -56,7 +56,7 @@ const Switcher = (): JSX.Element => {
   const { setTheme, theme } = useThemeStore();
   const customTheme = useTheme();
   const colorIcon =
-    theme === "dark" ? customTheme.colors.grey : customTheme.colors.white;
+    theme === "light" ? customTheme.colors.grey : customTheme.colors.white;
 
   return (
     <SwitcherBox>
@@ -75,9 +75,9 @@ const Switcher = (): JSX.Element => {
 
       <Toggle
         aria-label="Theme switcher"
-        defaultChecked={theme === "light"}
+        defaultChecked={theme === "dark"}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setTheme(e.target.checked ? "light" : "dark")
+          setTheme(e.target.checked ? "dark" : "light")
         }
       />
 

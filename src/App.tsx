@@ -1,9 +1,10 @@
 import { ThemeProvider } from "styled-components";
 import { useThemeStore } from "./store/useThemeStore";
 import { AppTheme, GlobalStyle } from "./globalStyles";
-import Button from "./ui/Button";
 import Container from "./ui/Container";
 import Header from "./components/Header";
+import Item from "./ui/Item";
+import IconTitle from "./ui/IconTitle";
 
 function App() {
   const { theme } = useThemeStore();
@@ -13,15 +14,30 @@ function App() {
       <GlobalStyle $themeName={theme} />
       <Container>
         <Header />
-        <p>
-          Click on the Vite and React logos to learn more Lorem ipsum dolor sit
-          amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque
-          aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis
-          vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor
-          libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis.
-          Ut justo. Suspendisse potenti.
-        </p>
-        <Button>Button</Button>
+        <div className="grid">
+          <div className="item">
+            <h1>
+              Welcome to the <b>Frontend Quiz!</b>
+            </h1>
+            <p className="color-grey">
+              <em>Pick a subject to get started.</em>
+            </p>
+          </div>
+          <div className="item">
+            <Item>
+              <IconTitle title="HTML" />
+            </Item>
+            <Item>
+              <IconTitle title="CSS" />
+            </Item>
+            <Item>
+              <IconTitle title="Javascript" />
+            </Item>
+            <Item>
+              <IconTitle title="Accessibility" />
+            </Item>
+          </div>
+        </div>
       </Container>
     </ThemeProvider>
   );
