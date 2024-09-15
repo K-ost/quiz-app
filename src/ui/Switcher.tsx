@@ -4,8 +4,10 @@ import { useThemeStore } from "../store/useThemeStore";
 const SwitcherBox = styled.div`
   align-items: center;
   display: inline-flex;
-  img {
-    display: block;
+  @media screen and (max-width: 680px) {
+    svg {
+      width: 16px;
+    }
   }
 `;
 
@@ -35,6 +37,18 @@ const Toggle = styled.input.attrs({
   }
   &:checked::before {
     transform: translateX(20px);
+  }
+  @media screen and (max-width: 680px) {
+    height: 20px;
+    margin: 0 8px;
+    width: 32px;
+    &:before {
+      height: 12px;
+      width: 12px;
+    }
+    &:checked::before {
+      transform: translateX(11px);
+    }
   }
 `;
 

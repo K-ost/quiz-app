@@ -1,26 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { ThemeName } from "./types";
 
-declare module "styled-components" {
-  export interface DefaultTheme {
-    colors: {
-      purple: string;
-      dark: string;
-      navy: string;
-      grey: string;
-      bluish: string;
-      light: string;
-      white: string;
-      success: string;
-      danger: string;
-    };
-    font: string;
-    fontSize: {
-      text: string;
-    };
-  }
-}
-
 export const AppTheme = {
   colors: {
     purple: "#A729F5",
@@ -36,6 +16,10 @@ export const AppTheme = {
   font: '"Rubik", sans-serif',
   fontSize: {
     text: "12px",
+    header1: "144px",
+    headerL: "64px",
+    headerM: "36px",
+    headerS: "28px",
   },
 };
 
