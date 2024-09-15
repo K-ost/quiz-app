@@ -20,6 +20,17 @@ const ItemDiv = styled.div<{ $themeName: ThemeName }>`
   margin: 0 0 24px;
   padding: 20px;
   position: relative;
+  &:hover .iconBox {
+    background: #f6e7ff;
+    color: ${({ theme }) => theme.colors.purple};
+  }
+  &.active {
+    border-color: ${({ theme }) => theme.colors.purple};
+  }
+  &.active .iconBox {
+    background: ${({ theme }) => theme.colors.purple};
+    color: ${({ theme }) => theme.colors.white};
+  }
   @media screen and (max-width: 750px) {
     border-radius: 12px;
     margin: 0 0 12px;

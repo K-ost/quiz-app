@@ -25,5 +25,3 @@ declare module "styled-components" {
 }
 
 export type ThemeName = "light" | "dark";
-
-export type IconTitleType = "HTML" | "CSS" | "Javascript" | "Accessibility";

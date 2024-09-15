@@ -41,29 +41,15 @@ export const GlobalStyle = createGlobalStyle<{ $themeName: ThemeName }>`
   .color-grey {
     color: ${(props) => props.theme.colors.grey};
   }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 24px;
-  }
   h1 {
     font-size: ${(props) => props.theme.fontSize.headerL};
     font-weight: 300;
     line-height: 68px;
     margin: 0 0 48px;
   }
-  @media screen and (max-width: 1020px) {
-    .grid {
-      grid-template-columns: repeat(1, 1fr);
-      grid-row-gap: 64px;
-    }
-  }
   @media screen and (max-width: 750px) {
     body {
       font-size: ${(props) => props.theme.fontSize.textXS};
-    }
-    .grid {
-      grid-row-gap: 40px;
     }
     h1 {
       font-size: 40px;
