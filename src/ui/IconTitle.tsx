@@ -12,7 +12,7 @@ type IconTitleProps = {
 
 const Title = styled.div`
   align-items: center;
-  display: flex;
+  display: inline-flex;
   font-size: ${(props) => props.theme.fontSize.headerS};
   font-weight: 500;
   @media screen and (max-width: 680px) {

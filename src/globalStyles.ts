@@ -46,6 +46,9 @@ export const GlobalStyle = createGlobalStyle<{ $themeName: ThemeName }>`
     font-weight: 300;
     line-height: 68px;
     margin: 0 0 48px;
+    &:last-child {
+      margin: 0;
+    }
   }
   h2 {
     font-size: ${(props) => props.theme.fontSize.headerM};

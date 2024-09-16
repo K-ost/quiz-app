@@ -5,12 +5,13 @@ import Item from "../ui/Item";
 type SubjectsProps = {
   setSubject: React.Dispatch<React.SetStateAction<string>>;
   subject: string;
+  show: boolean;
 };
 
 const Subjects = (props: SubjectsProps): JSX.Element => {
-  const { setSubject, subject } = props;
+  const { setSubject, subject, show } = props;
 
-  if (subject.length) return <></>;
+  if (!show) return <></>;
 
   return (
     <Grid cols={2} sm={1}>
@@ -18,9 +19,9 @@ const Subjects = (props: SubjectsProps): JSX.Element => {
         <h1>
           Welcome to the <b>Frontend Quiz!</b>
         </h1>
-        <p className="color-grey">
+        <div className="color-grey">
           <em>Pick a subject to get started.</em>
-        </p>
+        </div>
       </div>
       <div>
         <Item onClick={() => setSubject("HTML")}>

@@ -15,12 +15,14 @@ const NotifyBox = styled.div<{ $themeName: ThemeName }>`
   display: flex;
   font-size: ${(props) => props.theme.fontSize.textS};
   justify-content: center;
+  margin-top: 32px;
   img {
     display: block;
     margin-right: 8px;
   }
   @media screen and (max-width: 750px) {
     font-size: 18px;
+    margin-top: 12px;
     img {
       width: 32px;
     }
