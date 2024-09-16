@@ -30,7 +30,7 @@ export const Icon = styled.div`
   justify-content: center;
   margin: 0 24px 0 0;
   height: 56px;
-  width: 56px;
+  min-width: 56px;
   transition: all 200ms ease-in-out;
   img {
     display: block;
@@ -51,7 +51,7 @@ export const Icon = styled.div`
     height: 40px;
     font-size: 18px;
     margin: 0 16px 0 0;
-    width: 40px;
+    min-width: 40px;
     img {
       width: 28px;
     }

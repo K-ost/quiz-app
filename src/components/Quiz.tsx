@@ -7,25 +7,24 @@ import IconTitle from "../ui/IconTitle";
 import Button from "../ui/Button";
 import Notify from "../ui/Notify";
 import Pager from "../ui/Pager";
+import { getClassName } from "../utils";
 
 const letters = ["A", "B", "C", "D", "E"];
 
 type QuizProps = {
   setScore: React.Dispatch<React.SetStateAction<number>>;
   setShowScore: React.Dispatch<React.SetStateAction<boolean>>;
-  hide: boolean;
   subject: string;
 };
 
 const Quiz = (props: QuizProps): JSX.Element => {
-  const { setScore, setShowScore, hide, subject } = props;
+  const { setScore, setShowScore, subject } = props;
   const quiz = data.quizzes.find((quiz) => quiz.title === subject);
   const [page, setPage] = useState<number>(1);
   const [picked, setPicked] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
   const [checked, setChecked] = useState<boolean>(false);
 
-  if (!subject.length || hide) return <></>;
   if (!quiz) return <>There's no quiz for this subject.</>;
 
   const currentQuestion = quiz.questions[page - 1];
@@ -54,58 +53,72 @@ const Quiz = (props: QuizProps): JSX.Element => {
   };
 
   return (
-    <Grid cols={2} sm={1}>
-      <div>
-        <Pager>
-          Question {page} of {quiz.questions.length}
-        </Pager>
-        <h2>{currentQuestion.question}</h2>
-        <ProgressBar progress={page} />
-      </div>
+    <>
+      <Grid cols={2} sm={1}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div style={{ flexGrow: 1 }}>
+            <Pager>
+              Question {page} of {quiz.questions.length}
+            </Pager>
+            <h2>{currentQuestion.question}</h2>
+          </div>
+          <ProgressBar progress={page} />
+        </div>
 
-      <div>
-        {currentQuestion.options.map((option, index) => {
-          let classname = "";
-          if (!checked && option === picked) classname = "active";
-          if (checked && option === currentQuestion.answer)
-            classname = "correct";
-          if (checked && option === picked && option !== currentQuestion.answer)
-            classname = "wrong";
-          if (checked && option === picked && option === currentQuestion.answer)
-            classname = "success";
-          return (
-            <Item
-              key={option}
-              option="true"
-              className={classname}
-              onClick={() => pickAnswer(option)}
+        <div>
+          {currentQuestion.options.map((option, index) => {
+            return (
+              <Item
+                key={option}
+                option="true"
+                className={getClassName(
+                  checked,
+                  option,
+                  picked,
+                  currentQuestion.answer
+                )}
+                onClick={() => pickAnswer(option)}
+              >
+                <IconTitle title={option} letter={letters[index]} />
+              </Item>
+            );
+          })}
+        </div>
+      </Grid>
+
+      <Grid cols={2} sm={1} className="norow">
+        <div></div>
+        <div>
+          {((!isLastPage && !checked) || (isLastPage && !checked)) && (
+            <Button style={{ width: "100%" }} onClick={submitAnswerHandler}>
+              Submit Answer
+            </Button>
+          )}
+
+          {!isLastPage && checked && (
+            <Button style={{ width: "100%" }} onClick={nextQuestionHandler}>
+              Next Question
+            </Button>
+          )}
+
+          {isLastPage && checked && (
+            <Button
+              style={{ width: "100%" }}
+              onClick={() => setShowScore(true)}
             >
-              <IconTitle title={option} letter={letters[index]} />
-            </Item>
-          );
-        })}
+              Finish the test
+            </Button>
+          )}
 
-        {((!isLastPage && !checked) || (isLastPage && !checked)) && (
-          <Button style={{ width: "100%" }} onClick={submitAnswerHandler}>
-            Submit Answer
-          </Button>
-        )}
-
-        {!isLastPage && checked && (
-          <Button style={{ width: "100%" }} onClick={nextQuestionHandler}>
-            Next Question
-          </Button>
-        )}
-
-        {isLastPage && checked && (
-          <Button style={{ width: "100%" }} onClick={() => setShowScore(true)}>
-            Finish the test
-          </Button>
-        )}
-
-        <Notify show={error}>Please select an answer</Notify>
-      </div>
-    </Grid>
+          <Notify show={error}>Please select an answer</Notify>
+        </div>
+      </Grid>
+    </>
   );
 };
 

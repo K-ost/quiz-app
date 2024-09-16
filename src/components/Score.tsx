@@ -5,15 +5,12 @@ import ScoreScreen from "./ScoreScreen";
 
 type ScoreProps = {
   score: number;
-  show: boolean;
   subject: string;
-  setShowScore: React.Dispatch<React.SetStateAction<boolean>>;
+  reset: () => void;
 };
 
 const Score = (props: ScoreProps): JSX.Element => {
-  const { score, show, subject, setShowScore } = props;
-
-  if (!show) return <></>;
+  const { score, subject, reset } = props;
 
   return (
     <Grid cols={2} sm={1}>
@@ -28,7 +25,7 @@ const Score = (props: ScoreProps): JSX.Element => {
           <h2>{score}</h2>
           <p>out of 10</p>
         </ScoreScreen>
-        <Button style={{ width: "100%" }} onClick={() => setShowScore(false)}>
+        <Button style={{ width: "100%" }} onClick={reset}>
           Play Again
         </Button>
       </div>

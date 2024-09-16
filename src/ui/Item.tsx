@@ -24,10 +24,15 @@ const ItemDiv = styled.div<{ $themeName: ThemeName }>`
         : "rgba(49, 62, 81, 0.14)"};
   box-sizing: border-box;
   cursor: pointer;
-  min-height: 92px;
+  min-height: 96px;
+  align-items: center;
+  display: flex;
   margin: 0 0 24px;
-  padding: 20px;
+  padding: 14px 68px 14px 20px;
   position: relative;
+  &:last-child {
+    margin: 0;
+  }
   .stateMark {
     display: none;
     position: absolute;

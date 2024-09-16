@@ -4,14 +4,10 @@ import Item from "../ui/Item";
 
 type SubjectsProps = {
   setSubject: React.Dispatch<React.SetStateAction<string>>;
-  subject: string;
-  show: boolean;
 };
 
 const Subjects = (props: SubjectsProps): JSX.Element => {
-  const { setSubject, subject, show } = props;
-
-  if (!show) return <></>;
+  const { setSubject } = props;
 
   return (
     <Grid cols={2} sm={1}>

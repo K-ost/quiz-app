@@ -14,24 +14,30 @@ function App() {
   const [showScore, setShowScore] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
 
+  const resetTest = () => {
+    setSubject("");
+    setShowScore(false);
+  };
+
   return (
     <ThemeProvider theme={AppTheme}>
       <GlobalStyle $themeName={theme} />
       <Container>
         <Header subject={subject} />
-        <Subjects subject={subject} show={showScore} setSubject={setSubject} />
-        <Quiz
-          subject={subject}
-          setScore={setScore}
-          hide={showScore}
-          setShowScore={setShowScore}
-        />
-        <Score
-          subject={subject}
-          score={score}
-          show={showScore}
-          setShowScore={setShowScore}
-        />
+
+        {!subject.length && !showScore && <Subjects setSubject={setSubject} />}
+
+        {!!subject.length && !showScore && (
+          <Quiz
+            subject={subject}
+            setScore={setScore}
+            setShowScore={setShowScore}
+          />
+        )}
+
+        {showScore && (
+          <Score subject={subject} score={score} reset={resetTest} />
+        )}
       </Container>
     </ThemeProvider>
   );
