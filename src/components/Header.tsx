@@ -2,6 +2,10 @@ import styled from "styled-components";
 import Switcher from "../ui/Switcher";
 import IconTitle from "../ui/IconTitle";
 
+type HeaderProps = {
+  subject: string;
+};
+
 const Head = styled.header`
   align-items: center;
   display: flex;
@@ -16,12 +20,11 @@ const Head = styled.header`
   }
 `;
 
-const Header = (): JSX.Element => {
+const Header = (props: HeaderProps): JSX.Element => {
+  const { subject } = props;
   return (
     <Head>
-      <div>
-        <IconTitle title="Accessibility" icon />
-      </div>
+      <div>{subject.length ? <IconTitle title={subject} icon /> : null}</div>
       <Switcher />
     </Head>
   );

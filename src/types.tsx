@@ -27,3 +27,15 @@ declare module "styled-components" {
 export type ThemeName = "light" | "dark";
 
 export type ItemState = "active" | "wrong" | "correct" | "success";
+
+export type Question = {
+  question: string;
+  options: string[];
+  answer: string;
+};
+
+export type Quiz = {
+  title: string;
+  icon: string;
+  questions: Question[];
+};

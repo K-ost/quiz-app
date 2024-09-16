@@ -47,6 +47,12 @@ export const GlobalStyle = createGlobalStyle<{ $themeName: ThemeName }>`
     line-height: 68px;
     margin: 0 0 48px;
   }
+  h2 {
+    font-size: ${(props) => props.theme.fontSize.headerM};
+    font-weight: 500;
+    line-height: 40px;
+    margin: 0 0 24px;
+  }
   @media screen and (max-width: 750px) {
     body {
       font-size: ${(props) => props.theme.fontSize.textXS};
@@ -56,6 +62,10 @@ export const GlobalStyle = createGlobalStyle<{ $themeName: ThemeName }>`
       font-weight: 300;
       line-height: 44px;
       margin: 0 0 18px;
+    }
+    h2 {
+      font-size: 20px;
+      line-height: 24px;
     }
   }
 `;
