@@ -7,6 +7,8 @@ import Item from "./ui/Item";
 import IconTitle from "./ui/IconTitle";
 import Grid from "./ui/Grid";
 import ProgressBar from "./ui/ProgressBar";
+import Button from "./ui/Button";
+import Notify from "./ui/Notify";
 
 function App() {
   const { theme } = useThemeStore();
@@ -39,12 +41,24 @@ function App() {
             <Item>
               <IconTitle title="Accessibility" icon />
             </Item>
-            <Item className="active">
+            <Item option="true" className="active">
               <IconTitle title="4.5 : 1" letter="A" />
             </Item>
-            <Item>
-              <IconTitle title="4.5 : 2" letter="B" />
+            <Item option="true" className="success">
+              <IconTitle title="3 : 1" letter="B" />
             </Item>
+            <Item option="true" className="wrong">
+              <IconTitle title="2.5 : 1" letter="C" />
+            </Item>
+            <Item option="true" className="correct">
+              <IconTitle title="5 : 1" letter="D" />
+            </Item>
+            <Item option="true">
+              <IconTitle title="5 : 1" letter="E" />
+            </Item>
+
+            <Button style={{ width: "100%" }}>Submit Answer</Button>
+            <Notify>Please select an answer</Notify>
           </div>
         </Grid>
       </Container>

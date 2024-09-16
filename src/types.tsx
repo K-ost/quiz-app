@@ -25,3 +25,5 @@ declare module "styled-components" {
 }
 
 export type ThemeName = "light" | "dark";
+
+export type ItemState = "active" | "wrong" | "correct" | "success";

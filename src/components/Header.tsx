@@ -20,7 +20,7 @@ const Header = (): JSX.Element => {
   return (
     <Head>
       <div>
-        <IconTitle title="Accessibility" />
+        <IconTitle title="Accessibility" icon />
       </div>
       <Switcher />
     </Head>

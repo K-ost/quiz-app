@@ -1,6 +1,14 @@
 import styled from "styled-components";
 import { useThemeStore } from "../store/useThemeStore";
 import { ThemeName } from "../types";
+import { Icon } from "./IconTitle";
+import iconSuccess from "../assets/icon-correct.svg";
+import iconWrong from "../assets/icon-incorrect.svg";
+
+type ItemProps = React.ComponentPropsWithoutRef<"div"> & {
+  children: React.ReactNode;
+  option?: "true" | "false";
+};
 
 const ItemDiv = styled.div<{ $themeName: ThemeName }>`
   background: ${({ $themeName, theme }) =>
@@ -20,15 +28,47 @@ const ItemDiv = styled.div<{ $themeName: ThemeName }>`
   margin: 0 0 24px;
   padding: 20px;
   position: relative;
-  &:hover .iconBox {
+  .stateMark {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -20px;
+  }
+  &:hover ${Icon} {
     background: #f6e7ff;
     color: ${({ theme }) => theme.colors.purple};
   }
   &.active {
     border-color: ${({ theme }) => theme.colors.purple};
   }
-  &.active .iconBox {
+  &.success {
+    border-color: ${({ theme }) => theme.colors.success};
+    .stateMark-correct {
+      display: block;
+    }
+  }
+  &.correct {
+    .stateMark-correct {
+      display: block;
+    }
+  }
+  &.wrong {
+    border-color: ${({ theme }) => theme.colors.danger};
+    .stateMark-wrong {
+      display: block;
+    }
+  }
+  &.active ${Icon} {
     background: ${({ theme }) => theme.colors.purple};
+    color: ${({ theme }) => theme.colors.white};
+  }
+  &.success ${Icon} {
+    background: ${({ theme }) => theme.colors.success};
+    color: ${({ theme }) => theme.colors.white};
+  }
+  &.wrong ${Icon} {
+    background: ${({ theme }) => theme.colors.danger};
     color: ${({ theme }) => theme.colors.white};
   }
   @media screen and (max-width: 750px) {
@@ -36,13 +76,33 @@ const ItemDiv = styled.div<{ $themeName: ThemeName }>`
     margin: 0 0 12px;
     min-height: 64px;
     padding: 12px;
+    .stateMark {
+      width: 32px;
+      right: 12px;
+      margin-top: -16px;
+    }
   }
 `;
 
-const Item = (props: React.ComponentPropsWithoutRef<"div">): JSX.Element => {
+const Item = (props: ItemProps): JSX.Element => {
+  const { children, option } = props;
   const { theme } = useThemeStore();
 
-  return <ItemDiv $themeName={theme} {...props} />;
+  return (
+    <ItemDiv $themeName={theme} {...props}>
+      {children}
+      {option && (
+        <>
+          <img
+            src={iconSuccess}
+            alt=""
+            className="stateMark stateMark-correct"
+          />
+          <img src={iconWrong} alt="" className="stateMark stateMark-wrong" />
+        </>
+      )}
+    </ItemDiv>
+  );
 };
 
 export default Item;

@@ -20,7 +20,7 @@ const Title = styled.div`
   }
 `;
 
-const Icon = styled.div`
+export const Icon = styled.div`
   background: ${({ theme }) => theme.colors.light};
   border-radius: 8px;
   align-items: center;
@@ -76,7 +76,7 @@ const IconTitle = (props: IconTitleProps): JSX.Element => {
           <img src={iconImg} alt="" />
         </Icon>
       ) : (
-        <Icon className="iconBox">{letter}</Icon>
+        <Icon>{letter}</Icon>
       )}
       {title}
     </Title>
