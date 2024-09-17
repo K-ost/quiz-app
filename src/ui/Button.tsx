@@ -19,6 +19,12 @@ const CustomButton = styled.button`
     font-size: 18px;
     line-height: 20px;
     padding: 18px 24px;
+    &:hover {
+      opacity: 1;
+    }
+    &:active {
+      opacity: 0.5;
+    }
   }
 `;
 

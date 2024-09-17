@@ -17,6 +17,7 @@ function App() {
   const resetTest = () => {
     setSubject("");
     setShowScore(false);
+    setScore(0);
   };
 
   return (
