@@ -323,6 +323,12 @@ Error generating stack: `+i.message+`
     font-size: 18px;
     line-height: 20px;
     padding: 18px 24px;
+    &:hover {
+      opacity: 1;
+    }
+    &:active {
+      opacity: 0.5;
+    }
   }
 `,zo=e=>C.jsx(z1,{...e}),T1="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='40'%20height='40'%20fill='none'%20viewBox='0%200%2040%2040'%3e%3cpath%20fill='%23EE5454'%20d='M20%205a15%2015%200%201%201%200%2030%2015%2015%200%200%201%200-30Zm0%202.5a12.5%2012.5%200%201%200%200%2025%2012.5%2012.5%200%200%200%200-25Zm-5.402%207.415.142-.175a1.25%201.25%200%200%201%201.595-.143l.175.143L20%2018.233l3.49-3.493a1.25%201.25%200%200%201%201.595-.143l.175.143a1.25%201.25%200%200%201%20.142%201.595l-.142.175L21.767%2020l3.493%203.49a1.25%201.25%200%200%201%20.142%201.595l-.142.175a1.25%201.25%200%200%201-1.595.142l-.175-.142L20%2021.767l-3.49%203.493a1.25%201.25%200%200%201-1.595.142l-.175-.142a1.25%201.25%200%200%201-.143-1.595l.143-.175L18.233%2020l-3.493-3.49a1.25%201.25%200%200%201-.143-1.595Z'/%3e%3c/svg%3e",$1=ge.div`
   align-items: center;
@@ -381,4 +387,4 @@ Error generating stack: `+i.message+`
       font-size: 18px;
     }
   }
-`,D1=e=>{const{children:t}=e,{theme:n}=sn();return C.jsx(A1,{$themeName:n,children:t})},F1=e=>{const{score:t,subject:n,reset:r}=e;return C.jsxs(ri,{cols:2,sm:1,children:[C.jsx("div",{children:C.jsxs("h1",{children:["Quiz completed ",C.jsx("b",{children:"You scored..."})]})}),C.jsxs("div",{children:[C.jsxs(D1,{children:[C.jsx(Kt,{title:n,icon:!0}),C.jsx("h2",{children:t}),C.jsx("p",{children:"out of 10"})]}),C.jsx(zo,{style:{width:"100%"},onClick:r,children:"Play Again"})]})]})};function H1(){const{theme:e}=sn(),[t,n]=de.useState(""),[r,o]=de.useState(!1),[i,l]=de.useState(0),s=()=>{n(""),o(!1)};return C.jsxs(Bh,{theme:o1,children:[C.jsx(i1,{$themeName:e}),C.jsxs(s1,{children:[C.jsx(v1,{subject:t}),!t.length&&!r&&C.jsx(k1,{setSubject:n}),!!t.length&&!r&&C.jsx(M1,{subject:t,setScore:l,setShowScore:o}),r&&C.jsx(F1,{subject:t,score:i,reset:s})]})]})}Vf(document.getElementById("root")).render(C.jsx(de.StrictMode,{children:C.jsx(H1,{})}));
+`,D1=e=>{const{children:t}=e,{theme:n}=sn();return C.jsx(A1,{$themeName:n,children:t})},F1=e=>{const{score:t,subject:n,reset:r}=e;return C.jsxs(ri,{cols:2,sm:1,children:[C.jsx("div",{children:C.jsxs("h1",{children:["Quiz completed ",C.jsx("b",{children:"You scored..."})]})}),C.jsxs("div",{children:[C.jsxs(D1,{children:[C.jsx(Kt,{title:n,icon:!0}),C.jsx("h2",{children:t}),C.jsx("p",{children:"out of 10"})]}),C.jsx(zo,{style:{width:"100%"},onClick:r,children:"Play Again"})]})]})};function H1(){const{theme:e}=sn(),[t,n]=de.useState(""),[r,o]=de.useState(!1),[i,l]=de.useState(0),s=()=>{n(""),o(!1),l(0)};return C.jsxs(Bh,{theme:o1,children:[C.jsx(i1,{$themeName:e}),C.jsxs(s1,{children:[C.jsx(v1,{subject:t}),!t.length&&!r&&C.jsx(k1,{setSubject:n}),!!t.length&&!r&&C.jsx(M1,{subject:t,setScore:l,setShowScore:o}),r&&C.jsx(F1,{subject:t,score:i,reset:s})]})]})}Vf(document.getElementById("root")).render(C.jsx(de.StrictMode,{children:C.jsx(H1,{})}));
