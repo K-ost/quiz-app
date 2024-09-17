@@ -285,7 +285,7 @@ Error generating stack: `+i.message+`
     border-radius: 12px;
     margin: 0 0 12px;
     min-height: 64px;
-    padding: 12px;
+    padding: 12px 64px 12px 12px;
     .stateMark {
       width: 32px;
       right: 12px;
