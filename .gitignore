@@ -12,8 +12,10 @@ dist
 dist-ssr
 *.local
 TASK.md
-tsconfig.app.tsbuildinfo
 tsconfig.node.tsbuildinfo
+tsconfig.tsbuildinfo
+vite.config.d.ts
+vite.config.js
 
 # Editor directories and files
 .vscode/*

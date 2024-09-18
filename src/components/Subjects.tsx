@@ -1,13 +1,23 @@
 import Grid from "../ui/Grid";
 import IconTitle from "../ui/IconTitle";
 import Item from "../ui/Item";
+import { useAppStore } from "../store/useAppStore";
+import { Quiz } from "../types";
 
 type SubjectsProps = {
-  setSubject: React.Dispatch<React.SetStateAction<string>>;
+  quizzes: Quiz[];
 };
 
 const Subjects = (props: SubjectsProps): JSX.Element => {
-  const { setSubject } = props;
+  const { quizzes } = props;
+  const { setIcon, setQuestionsCount, setScreen, setSubject } = useAppStore();
+
+  const chooseSubject = (icon: string, title: string, count: number): void => {
+    setIcon(icon);
+    setSubject(title);
+    setQuestionsCount(count);
+    setScreen("quiz");
+  };
 
   return (
     <Grid cols={2} sm={1}>
@@ -20,18 +30,16 @@ const Subjects = (props: SubjectsProps): JSX.Element => {
         </div>
       </div>
       <div>
-        <Item onClick={() => setSubject("HTML")}>
-          <IconTitle title="HTML" icon />
-        </Item>
-        <Item onClick={() => setSubject("CSS")}>
-          <IconTitle title="CSS" icon />
-        </Item>
-        <Item onClick={() => setSubject("JavaScript")}>
-          <IconTitle title="JavaScript" icon />
-        </Item>
-        <Item onClick={() => setSubject("Accessibility")}>
-          <IconTitle title="Accessibility" icon />
-        </Item>
+        {quizzes.map((quiz) => (
+          <Item
+            key={quiz.title}
+            onClick={() =>
+              chooseSubject(quiz.icon, quiz.title, quiz.questions.length)
+            }
+          >
+            <IconTitle title={quiz.title} icon={quiz.icon} />
+          </Item>
+        ))}
       </div>
     </Grid>
   );

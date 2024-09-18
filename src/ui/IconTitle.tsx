@@ -1,11 +1,8 @@
 import styled from "styled-components";
-import htmlIcon from "../assets/icon-html.svg";
-import cssIcon from "../assets/icon-css.svg";
-import jsIcon from "../assets/icon-js.svg";
-import accessibilityIcon from "../assets/icon-accessibility.svg";
+import { getImageLink } from "../utils";
 
 type IconTitleProps = {
-  icon?: boolean;
+  icon?: string;
   letter?: string;
   title: string;
 };
@@ -34,6 +31,7 @@ export const Icon = styled.div`
   transition: all 200ms ease-in-out;
   img {
     display: block;
+    max-width: 40px;
   }
   &.html {
     background: #fff1e9;
@@ -59,21 +57,13 @@ export const Icon = styled.div`
 `;
 
 const IconTitle = (props: IconTitleProps): JSX.Element => {
-  const { icon = false, letter, title } = props;
-  const iconImg =
-    title === "Accessibility"
-      ? accessibilityIcon
-      : title === "CSS"
-      ? cssIcon
-      : title === "HTML"
-      ? htmlIcon
-      : jsIcon;
+  const { icon, letter, title } = props;
 
   return (
     <Title>
-      {icon ? (
+      {icon && icon.length ? (
         <Icon className={title.toLocaleLowerCase()}>
-          <img src={iconImg} alt="" />
+          <img src={getImageLink(icon)} alt="" />
         </Icon>
       ) : (
         <Icon>{letter}</Icon>

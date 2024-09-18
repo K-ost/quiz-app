@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import Switcher from "../ui/Switcher";
 import IconTitle from "../ui/IconTitle";
-
-type HeaderProps = {
-  subject: string;
-};
+import { useAppStore } from "../store/useAppStore";
 
 const Head = styled.header`
   align-items: center;
@@ -20,11 +17,13 @@ const Head = styled.header`
   }
 `;
 
-const Header = (props: HeaderProps): JSX.Element => {
-  const { subject } = props;
+const Header = (): JSX.Element => {
+  const { icon, subject } = useAppStore();
   return (
     <Head>
-      <div>{subject.length ? <IconTitle title={subject} icon /> : null}</div>
+      <div>
+        {subject.length ? <IconTitle title={subject} icon={icon} /> : null}
+      </div>
       <Switcher />
     </Head>
   );

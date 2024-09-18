@@ -3,6 +3,7 @@ import { useThemeStore } from "../store/useThemeStore";
 import { ThemeName } from "../types";
 
 type ProgressBarProps = {
+  all: number;
   progress: number;
 };
 
@@ -24,12 +25,12 @@ const Range = styled.div<{ $progress: number }>`
 `;
 
 const ProgressBar = (props: ProgressBarProps): JSX.Element => {
-  const { progress } = props;
+  const { all, progress } = props;
   const { theme } = useThemeStore();
 
   return (
     <Bar $themeName={theme}>
-      <Range $progress={(100 * progress) / 10} />
+      <Range $progress={(100 * progress) / all} />
     </Bar>
   );
 };

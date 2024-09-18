@@ -2,7 +2,7 @@
   "quizzes": [
     {
       "title": "HTML",
-      "icon": "./assets/images/icon-html.svg",
+      "icon": "./assets/icon-html.svg",
       "questions": [
         {
           "question": "What does HTML stand for?",
@@ -83,7 +83,7 @@
     },
     {
       "title": "CSS",
-      "icon": "./assets/images/icon-css.svg",
+      "icon": "./assets/icon-css.svg",
       "questions": [
         {
           "question": "What does CSS stand for?",
@@ -159,7 +159,7 @@
     },
     {
       "title": "JavaScript",
-      "icon": "./assets/images/icon-js.svg",
+      "icon": "./assets/icon-js.svg",
       "questions": [
         {
           "question": "Which syntax is correct to output 'Hello World' in an alert box?",
@@ -255,7 +255,7 @@
     },
     {
       "title": "Accessibility",
-      "icon": "./assets/images/icon-accessibility.svg",
+      "icon": "./assets/icon-accessibility.svg",
       "questions": [
         {
           "question": "What does 'WCAG' stand for?",
@@ -346,6 +346,42 @@
             "JavaScript Console"
           ],
           "answer": "Google Lighthouse"
+        }
+      ]
+    },
+    {
+      "icon": "./assets/icon-react.svg",
+      "title": "React",
+      "questions": [
+        {
+          "question": "What is ReactJS primarily used for?",
+          "options": [
+            "Server-side scripting",
+            "Building user interfaces",
+            "Database management",
+            "Graphic design"
+          ],
+          "answer": "Building user interfaces"
+        },
+        {
+          "question": "What is JSX in React?",
+          "options": [
+            "A styling language",
+            "A templating engine",
+            "A syntax extension for JavaScript",
+            "A state management library"
+          ],
+          "answer": "A syntax extension for JavaScript"
+        },
+        {
+          "question": "What is the purpose of React Components?",
+          "options": [
+            "Managing database connections",
+            "Handling server-side logic",
+            "Building user interfaces into reusable pieces",
+            "Controlling browser settings"
+          ],
+          "answer": "Building user interfaces into reusable pieces"
         }
       ]
     }

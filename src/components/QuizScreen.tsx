@@ -1,5 +1,4 @@
 import { useState } from "react";
-import data from "../../data.json";
 import Grid from "../ui/Grid";
 import ProgressBar from "../ui/ProgressBar";
 import Item from "../ui/Item";
@@ -8,18 +7,18 @@ import Button from "../ui/Button";
 import Notify from "../ui/Notify";
 import Pager from "../ui/Pager";
 import { getClassName } from "../utils";
+import { useAppStore } from "../store/useAppStore";
+import { Quiz } from "../types";
+
+type QuizProps = {
+  quiz: Quiz;
+};
 
 const letters = ["A", "B", "C", "D", "E"];
 
-type QuizProps = {
-  setScore: React.Dispatch<React.SetStateAction<number>>;
-  setShowScore: React.Dispatch<React.SetStateAction<boolean>>;
-  subject: string;
-};
-
-const Quiz = (props: QuizProps): JSX.Element => {
-  const { setScore, setShowScore, subject } = props;
-  const quiz = data.quizzes.find((quiz) => quiz.title === subject);
+const QuizScreen = (props: QuizProps): JSX.Element => {
+  const { quiz } = props;
+  const { setScore, setScreen } = useAppStore();
   const [page, setPage] = useState<number>(1);
   const [picked, setPicked] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
@@ -42,7 +41,7 @@ const Quiz = (props: QuizProps): JSX.Element => {
     if (!picked.length) return setError(true);
     setChecked(true);
     if (picked === currentQuestion.answer) {
-      setScore((prev) => (prev += 1));
+      setScore();
     }
   };
 
@@ -67,7 +66,7 @@ const Quiz = (props: QuizProps): JSX.Element => {
             </Pager>
             <h2>{currentQuestion.question}</h2>
           </div>
-          <ProgressBar progress={page} />
+          <ProgressBar all={quiz.questions.length} progress={page} />
         </div>
 
         <div>
@@ -109,7 +108,7 @@ const Quiz = (props: QuizProps): JSX.Element => {
           {isLastPage && checked && (
             <Button
               style={{ width: "100%" }}
-              onClick={() => setShowScore(true)}
+              onClick={() => setScreen("score")}
             >
               Finish the test
             </Button>
@@ -122,4 +121,4 @@ const Quiz = (props: QuizProps): JSX.Element => {
   );
 };
 
-export default Quiz;
+export default QuizScreen;

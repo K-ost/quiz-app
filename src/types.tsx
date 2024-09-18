@@ -28,6 +28,8 @@ export type ThemeName = "light" | "dark";
 
 export type ItemState = "active" | "wrong" | "correct" | "success";
 
+export type ScreenType = "subjects" | "quiz" | "score";
+
 export type Question = {
   question: string;
   options: string[];

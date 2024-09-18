@@ -1,44 +1,27 @@
-import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { useThemeStore } from "./store/useThemeStore";
 import { AppTheme, GlobalStyle } from "./globalStyles";
 import Container from "./ui/Container";
 import Header from "./components/Header";
 import Subjects from "./components/Subjects";
-import Quiz from "./components/Quiz";
+import QuizScreen from "./components/QuizScreen";
 import Score from "./components/Score";
+import { useAppStore } from "./store/useAppStore";
+import data from "../data.json";
 
 function App() {
   const { theme } = useThemeStore();
-  const [subject, setSubject] = useState<string>("");
-  const [showScore, setShowScore] = useState<boolean>(false);
-  const [score, setScore] = useState<number>(0);
-
-  const resetTest = () => {
-    setSubject("");
-    setShowScore(false);
-    setScore(0);
-  };
+  const { screen, subject } = useAppStore();
+  const currentQuiz = data.quizzes.find((quiz) => quiz.title === subject);
 
   return (
     <ThemeProvider theme={AppTheme}>
       <GlobalStyle $themeName={theme} />
       <Container>
-        <Header subject={subject} />
-
-        {!subject.length && !showScore && <Subjects setSubject={setSubject} />}
-
-        {!!subject.length && !showScore && (
-          <Quiz
-            subject={subject}
-            setScore={setScore}
-            setShowScore={setShowScore}
-          />
-        )}
-
-        {showScore && (
-          <Score subject={subject} score={score} reset={resetTest} />
-        )}
+        <Header />
+        {screen === "subjects" && <Subjects quizzes={data.quizzes} />}
+        {screen === "quiz" && currentQuiz && <QuizScreen quiz={currentQuiz} />}
+        {screen === "score" && <Score />}
       </Container>
     </ThemeProvider>
   );
