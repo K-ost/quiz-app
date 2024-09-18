@@ -17,7 +17,7 @@ const Score = (): JSX.Element => {
       <div>
         <ScoreScreen>
           <IconTitle title={subject} icon={icon} />
-          <h2>{score}</h2>
+          <h2 data-testid="scoreValue">{score}</h2>
           <p className="color-grey">out of {questionsCount}</p>
         </ScoreScreen>
         <Button style={{ width: "100%" }} onClick={() => resetAppStore()}>

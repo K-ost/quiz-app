@@ -82,6 +82,7 @@ const QuizScreen = (props: QuizProps): JSX.Element => {
                   currentQuestion.answer
                 )}
                 onClick={() => pickAnswer(option)}
+                data-testid={`option-${index}`}
               >
                 <IconTitle title={option} letter={letters[index]} />
               </Item>

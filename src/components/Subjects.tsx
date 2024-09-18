@@ -36,6 +36,7 @@ const Subjects = (props: SubjectsProps): JSX.Element => {
             onClick={() =>
               chooseSubject(quiz.icon, quiz.title, quiz.questions.length)
             }
+            data-testid={`subject-${quiz.title}`}
           >
             <IconTitle title={quiz.title} icon={quiz.icon} />
           </Item>
