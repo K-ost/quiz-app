@@ -1,10 +1,6 @@
 import styled from "styled-components";
-import { ThemeName } from "../types";
-import { useThemeStore } from "../store/useThemeStore";
 
-const PagerBox = styled.div<{ $themeName: ThemeName }>`
-  color: ${({ theme, $themeName }) =>
-    $themeName === "dark" ? theme.colors.bluish : theme.colors.grey};
+const PagerBox = styled.div`
   font-style: italic;
   font-size: ${(props) => props.theme.fontSize.textS};
   margin: 0 0 27px;
@@ -15,8 +11,7 @@ const PagerBox = styled.div<{ $themeName: ThemeName }>`
 `;
 
 const Pager = (props: React.ComponentPropsWithoutRef<"div">): JSX.Element => {
-  const { theme } = useThemeStore();
-  return <PagerBox $themeName={theme} {...props} />;
+  return <PagerBox className="color-grey" {...props} />;
 };
 
 export default Pager;

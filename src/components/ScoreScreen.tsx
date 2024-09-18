@@ -24,8 +24,6 @@ const Box = styled.div<{ $themeName: ThemeName }>`
     margin: 30px 0 20px;
   }
   p {
-    color: ${({ theme, $themeName }) =>
-      $themeName === "dark" ? theme.colors.bluish : theme.colors.grey};
     font-size: ${(props) => props.theme.fontSize.textM};
     margin: 0;
   }

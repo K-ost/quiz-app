@@ -39,7 +39,8 @@ export const GlobalStyle = createGlobalStyle<{ $themeName: ThemeName }>`
     font-weight: 700;
   }
   .color-grey {
-    color: ${(props) => props.theme.colors.grey};
+    color: ${({ theme, $themeName }) =>
+      $themeName === "dark" ? theme.colors.bluish : theme.colors.grey};
   }
   h1 {
     font-size: ${(props) => props.theme.fontSize.headerL};
