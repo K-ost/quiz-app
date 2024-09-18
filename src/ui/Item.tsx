@@ -5,12 +5,12 @@ import { Icon } from "./IconTitle";
 import iconSuccess from "../assets/icon-correct.svg";
 import iconWrong from "../assets/icon-incorrect.svg";
 
-type ItemProps = React.ComponentPropsWithoutRef<"div"> & {
+type ItemProps = React.ComponentPropsWithoutRef<"button"> & {
   children: React.ReactNode;
   option?: "true" | "false";
 };
 
-const ItemDiv = styled.div<{ $themeName: ThemeName }>`
+const ItemDiv = styled.button<{ $themeName: ThemeName }>`
   background: ${({ $themeName, theme }) =>
     $themeName === "light" ? theme.colors.white : theme.colors.navy};
   border-radius: 24px;
@@ -23,13 +23,19 @@ const ItemDiv = styled.div<{ $themeName: ThemeName }>`
         ? "rgba(143, 160, 193, 0.14)"
         : "rgba(49, 62, 81, 0.14)"};
   box-sizing: border-box;
+  color: ${({ theme, $themeName }) =>
+    $themeName === "dark" ? theme.colors.white : theme.colors.dark};
   cursor: pointer;
   min-height: 96px;
+  outline: none;
   align-items: center;
   display: flex;
+  font-family: ${(props) => props.theme.font};
+  font-weight: 400;
   margin: 0 0 24px;
   padding: 14px 68px 14px 20px;
   position: relative;
+  width: 100%;
   &:last-child {
     margin: 0;
   }
@@ -43,6 +49,10 @@ const ItemDiv = styled.div<{ $themeName: ThemeName }>`
   &:hover ${Icon} {
     background: #f6e7ff;
     color: ${({ theme }) => theme.colors.purple};
+  }
+  &:focus-visible {
+    border-color: ${({ $themeName, theme }) =>
+      $themeName === "dark" ? theme.colors.white : theme.colors.bluish};
   }
   &.active {
     border-color: ${({ theme }) => theme.colors.purple};

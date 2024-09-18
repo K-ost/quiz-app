@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+import { ThemeName } from "../types";
 
-const CustomButton = styled.button`
+const CustomButton = styled.button<{ $themeName: ThemeName }>`
   background: ${(props) => props.theme.colors.purple};
   border: 0;
   border-radius: 24px;
@@ -13,6 +14,13 @@ const CustomButton = styled.button`
   transition: all 200ms ease-in-out;
   &:hover {
     opacity: 0.5;
+  }
+  &:focus-visible {
+    box-shadow: 0 16px 40px
+      ${({ $themeName }) =>
+        $themeName === "dark"
+          ? "rgba(143, 160, 193, 0.54)"
+          : "rgba(49, 62, 81, 0.54)"};
   }
   @media screen and (max-width: 750px) {
     border-radius: 12px;
@@ -31,7 +39,8 @@ const CustomButton = styled.button`
 const Button = (
   props: React.ComponentPropsWithoutRef<"button">
 ): JSX.Element => {
-  return <CustomButton {...props} />;
+  const { theme } = useTheme();
+  return <CustomButton $themeName={theme} {...props} />;
 };
 
 export default Button;

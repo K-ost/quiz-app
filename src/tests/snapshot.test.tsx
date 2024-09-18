@@ -71,8 +71,8 @@ it("App snapshot", () => {
                 </div>
               </div>
               <div>
-                <div
-                  class="sc-kLhKbu cJDVvf"
+                <button
+                  class="sc-kLhKbu dvlqpE"
                   data-testid="subject-HTML"
                 >
                   <div
@@ -88,9 +88,9 @@ it("App snapshot", () => {
                     </div>
                     HTML
                   </div>
-                </div>
-                <div
-                  class="sc-kLhKbu cJDVvf"
+                </button>
+                <button
+                  class="sc-kLhKbu dvlqpE"
                   data-testid="subject-CSS"
                 >
                   <div
@@ -106,9 +106,9 @@ it("App snapshot", () => {
                     </div>
                     CSS
                   </div>
-                </div>
-                <div
-                  class="sc-kLhKbu cJDVvf"
+                </button>
+                <button
+                  class="sc-kLhKbu dvlqpE"
                   data-testid="subject-JavaScript"
                 >
                   <div
@@ -124,9 +124,9 @@ it("App snapshot", () => {
                     </div>
                     JavaScript
                   </div>
-                </div>
-                <div
-                  class="sc-kLhKbu cJDVvf"
+                </button>
+                <button
+                  class="sc-kLhKbu dvlqpE"
                   data-testid="subject-Accessibility"
                 >
                   <div
@@ -142,9 +142,9 @@ it("App snapshot", () => {
                     </div>
                     Accessibility
                   </div>
-                </div>
-                <div
-                  class="sc-kLhKbu cJDVvf"
+                </button>
+                <button
+                  class="sc-kLhKbu dvlqpE"
                   data-testid="subject-React"
                 >
                   <div
@@ -160,7 +160,7 @@ it("App snapshot", () => {
                     </div>
                     React
                   </div>
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -229,8 +229,8 @@ it("App snapshot", () => {
               </div>
             </div>
             <div>
-              <div
-                class="sc-kLhKbu cJDVvf"
+              <button
+                class="sc-kLhKbu dvlqpE"
                 data-testid="subject-HTML"
               >
                 <div
@@ -246,9 +246,9 @@ it("App snapshot", () => {
                   </div>
                   HTML
                 </div>
-              </div>
-              <div
-                class="sc-kLhKbu cJDVvf"
+              </button>
+              <button
+                class="sc-kLhKbu dvlqpE"
                 data-testid="subject-CSS"
               >
                 <div
@@ -264,9 +264,9 @@ it("App snapshot", () => {
                   </div>
                   CSS
                 </div>
-              </div>
-              <div
-                class="sc-kLhKbu cJDVvf"
+              </button>
+              <button
+                class="sc-kLhKbu dvlqpE"
                 data-testid="subject-JavaScript"
               >
                 <div
@@ -282,9 +282,9 @@ it("App snapshot", () => {
                   </div>
                   JavaScript
                 </div>
-              </div>
-              <div
-                class="sc-kLhKbu cJDVvf"
+              </button>
+              <button
+                class="sc-kLhKbu dvlqpE"
                 data-testid="subject-Accessibility"
               >
                 <div
@@ -300,9 +300,9 @@ it("App snapshot", () => {
                   </div>
                   Accessibility
                 </div>
-              </div>
-              <div
-                class="sc-kLhKbu cJDVvf"
+              </button>
+              <button
+                class="sc-kLhKbu dvlqpE"
                 data-testid="subject-React"
               >
                 <div
@@ -318,7 +318,7 @@ it("App snapshot", () => {
                   </div>
                   React
                 </div>
-              </div>
+              </button>
             </div>
           </div>
         </div>
