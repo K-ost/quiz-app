@@ -11,7 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-TASK.md
 tsconfig.node.tsbuildinfo
 tsconfig.tsbuildinfo
 vite.config.d.ts
