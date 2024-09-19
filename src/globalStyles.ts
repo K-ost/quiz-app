@@ -27,8 +27,15 @@ export const AppTheme = {
 
 export const GlobalStyle = createGlobalStyle<{ $themeName: ThemeName }>`
   body {
-    background: ${({ $themeName, theme }) =>
+    background-color: ${({ $themeName, theme }) =>
       $themeName === "light" ? theme.colors.light : theme.colors.dark};
+    background-image: url(${({ $themeName }) =>
+      $themeName === "dark"
+        ? "./assets/pattern-background-desktop-dark.svg"
+        : "./assets/pattern-background-desktop-light.svg"});
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: ${({ $themeName, theme }) =>
       $themeName === "light" ? theme.colors.dark : theme.colors.white};
     font-family: ${(props) => props.theme.font};
@@ -57,9 +64,21 @@ export const GlobalStyle = createGlobalStyle<{ $themeName: ThemeName }>`
     line-height: 40px;
     margin: 0 0 24px;
   }
+  @media screen and (max-width: 1020px) {
+    body: {
+      background-image: url(${({ $themeName }) =>
+        $themeName === "dark"
+          ? "./assets/pattern-background-tablet-dark.svg"
+          : "./assets/pattern-background-tablet-light.svg"});
+        }
+  }
   @media screen and (max-width: 750px) {
     body {
       font-size: ${(props) => props.theme.fontSize.textXS};
+      background-image: url(${({ $themeName }) =>
+        $themeName === "dark"
+          ? "./assets/pattern-background-mobile-dark.svg"
+          : "./assets/pattern-background-mobile-light.svg"});
     }
     h1 {
       font-size: 40px;
