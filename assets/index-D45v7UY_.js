@@ -75,9 +75,15 @@ Error generating stack: `+i.message+`
     line-height: 40px;
     margin: 0 0 24px;
   }
+  @media screen and (max-width: 1020px) {
+    body: {
+      background-image: url(${({$themeName:e})=>e==="dark"?"./assets/pattern-background-tablet-dark.svg":"./assets/pattern-background-tablet-light.svg"});
+        }
+  }
   @media screen and (max-width: 750px) {
     body {
       font-size: ${e=>e.theme.fontSize.textXS};
+      background-image: url(${({$themeName:e})=>e==="dark"?"./assets/pattern-background-mobile-dark.svg":"./assets/pattern-background-mobile-light.svg"});
     }
     h1 {
       font-size: 40px;
