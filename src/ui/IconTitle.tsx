@@ -7,9 +7,10 @@ type IconTitleProps = {
   title: string;
 };
 
-const Title = styled.div`
+const Title = styled.span`
   align-items: center;
   display: inline-flex;
+  text-align: left;
   font-size: ${(props) => props.theme.fontSize.headerS};
   font-weight: 500;
   @media screen and (max-width: 680px) {
@@ -17,7 +18,7 @@ const Title = styled.div`
   }
 `;
 
-export const Icon = styled.div`
+export const Icon = styled.span`
   background: ${({ theme }) => theme.colors.light};
   border-radius: 8px;
   align-items: center;

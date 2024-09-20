@@ -19,9 +19,13 @@ function App() {
       <GlobalStyle $themeName={theme} />
       <Container>
         <Header />
-        {screen === "subjects" && <Subjects quizzes={data.quizzes} />}
-        {screen === "quiz" && currentQuiz && <QuizScreen quiz={currentQuiz} />}
-        {screen === "score" && <Score />}
+        <main>
+          {screen === "subjects" && <Subjects quizzes={data.quizzes} />}
+          {screen === "quiz" && currentQuiz && (
+            <QuizScreen quiz={currentQuiz} />
+          )}
+          {screen === "score" && <Score />}
+        </main>
       </Container>
     </ThemeProvider>
   );

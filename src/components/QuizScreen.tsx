@@ -91,7 +91,7 @@ const QuizScreen = (props: QuizProps): JSX.Element => {
         </div>
       </Grid>
 
-      <Grid cols={2} sm={1} className="norow">
+      <Grid cols={2} sm={1} norow>
         <div></div>
         <div>
           {((!isLastPage && !checked) || (isLastPage && !checked)) && (

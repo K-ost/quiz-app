@@ -50,119 +50,119 @@ it("App snapshot", () => {
                 </svg>
               </div>
             </header>
-            <div
-              class="sc-ghWlax czKlyf"
-              cols="2"
-              sm="1"
-            >
-              <div>
-                <h1>
-                  Welcome to the 
-                  <b>
-                    Frontend Quiz!
-                  </b>
-                </h1>
-                <div
-                  class="color-grey"
-                >
-                  <em>
-                    Pick a subject to get started.
-                  </em>
+            <main>
+              <div
+                class="sc-ghWlax dPRzKn"
+              >
+                <div>
+                  <h1>
+                    Welcome to the 
+                    <b>
+                      Frontend Quiz!
+                    </b>
+                  </h1>
+                  <div
+                    class="color-grey"
+                  >
+                    <em>
+                      Pick a subject to get started.
+                    </em>
+                  </div>
+                </div>
+                <div>
+                  <button
+                    class="sc-kLhKbu dvlqpE"
+                    data-testid="subject-HTML"
+                  >
+                    <span
+                      class="sc-fAUdSK hVECkn"
+                    >
+                      <span
+                        class="sc-dntaoT cxMXjn html"
+                      >
+                        <img
+                          alt=""
+                          src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-html.svg"
+                        />
+                      </span>
+                      HTML
+                    </span>
+                  </button>
+                  <button
+                    class="sc-kLhKbu dvlqpE"
+                    data-testid="subject-CSS"
+                  >
+                    <span
+                      class="sc-fAUdSK hVECkn"
+                    >
+                      <span
+                        class="sc-dntaoT cxMXjn css"
+                      >
+                        <img
+                          alt=""
+                          src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-css.svg"
+                        />
+                      </span>
+                      CSS
+                    </span>
+                  </button>
+                  <button
+                    class="sc-kLhKbu dvlqpE"
+                    data-testid="subject-JavaScript"
+                  >
+                    <span
+                      class="sc-fAUdSK hVECkn"
+                    >
+                      <span
+                        class="sc-dntaoT cxMXjn javascript"
+                      >
+                        <img
+                          alt=""
+                          src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-js.svg"
+                        />
+                      </span>
+                      JavaScript
+                    </span>
+                  </button>
+                  <button
+                    class="sc-kLhKbu dvlqpE"
+                    data-testid="subject-Accessibility"
+                  >
+                    <span
+                      class="sc-fAUdSK hVECkn"
+                    >
+                      <span
+                        class="sc-dntaoT cxMXjn accessibility"
+                      >
+                        <img
+                          alt=""
+                          src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-accessibility.svg"
+                        />
+                      </span>
+                      Accessibility
+                    </span>
+                  </button>
+                  <button
+                    class="sc-kLhKbu dvlqpE"
+                    data-testid="subject-React"
+                  >
+                    <span
+                      class="sc-fAUdSK hVECkn"
+                    >
+                      <span
+                        class="sc-dntaoT cxMXjn react"
+                      >
+                        <img
+                          alt=""
+                          src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-react.svg"
+                        />
+                      </span>
+                      React
+                    </span>
+                  </button>
                 </div>
               </div>
-              <div>
-                <button
-                  class="sc-kLhKbu dvlqpE"
-                  data-testid="subject-HTML"
-                >
-                  <div
-                    class="sc-fAUdSK jdnumO"
-                  >
-                    <div
-                      class="sc-dntaoT cxMXjn html"
-                    >
-                      <img
-                        alt=""
-                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-html.svg"
-                      />
-                    </div>
-                    HTML
-                  </div>
-                </button>
-                <button
-                  class="sc-kLhKbu dvlqpE"
-                  data-testid="subject-CSS"
-                >
-                  <div
-                    class="sc-fAUdSK jdnumO"
-                  >
-                    <div
-                      class="sc-dntaoT cxMXjn css"
-                    >
-                      <img
-                        alt=""
-                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-css.svg"
-                      />
-                    </div>
-                    CSS
-                  </div>
-                </button>
-                <button
-                  class="sc-kLhKbu dvlqpE"
-                  data-testid="subject-JavaScript"
-                >
-                  <div
-                    class="sc-fAUdSK jdnumO"
-                  >
-                    <div
-                      class="sc-dntaoT cxMXjn javascript"
-                    >
-                      <img
-                        alt=""
-                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-js.svg"
-                      />
-                    </div>
-                    JavaScript
-                  </div>
-                </button>
-                <button
-                  class="sc-kLhKbu dvlqpE"
-                  data-testid="subject-Accessibility"
-                >
-                  <div
-                    class="sc-fAUdSK jdnumO"
-                  >
-                    <div
-                      class="sc-dntaoT cxMXjn accessibility"
-                    >
-                      <img
-                        alt=""
-                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-accessibility.svg"
-                      />
-                    </div>
-                    Accessibility
-                  </div>
-                </button>
-                <button
-                  class="sc-kLhKbu dvlqpE"
-                  data-testid="subject-React"
-                >
-                  <div
-                    class="sc-fAUdSK jdnumO"
-                  >
-                    <div
-                      class="sc-dntaoT cxMXjn react"
-                    >
-                      <img
-                        alt=""
-                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-react.svg"
-                      />
-                    </div>
-                    React
-                  </div>
-                </button>
-              </div>
-            </div>
+            </main>
           </div>
         </div>
       </body>,
@@ -208,119 +208,119 @@ it("App snapshot", () => {
               </svg>
             </div>
           </header>
-          <div
-            class="sc-ghWlax czKlyf"
-            cols="2"
-            sm="1"
-          >
-            <div>
-              <h1>
-                Welcome to the 
-                <b>
-                  Frontend Quiz!
-                </b>
-              </h1>
-              <div
-                class="color-grey"
-              >
-                <em>
-                  Pick a subject to get started.
-                </em>
+          <main>
+            <div
+              class="sc-ghWlax dPRzKn"
+            >
+              <div>
+                <h1>
+                  Welcome to the 
+                  <b>
+                    Frontend Quiz!
+                  </b>
+                </h1>
+                <div
+                  class="color-grey"
+                >
+                  <em>
+                    Pick a subject to get started.
+                  </em>
+                </div>
+              </div>
+              <div>
+                <button
+                  class="sc-kLhKbu dvlqpE"
+                  data-testid="subject-HTML"
+                >
+                  <span
+                    class="sc-fAUdSK hVECkn"
+                  >
+                    <span
+                      class="sc-dntaoT cxMXjn html"
+                    >
+                      <img
+                        alt=""
+                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-html.svg"
+                      />
+                    </span>
+                    HTML
+                  </span>
+                </button>
+                <button
+                  class="sc-kLhKbu dvlqpE"
+                  data-testid="subject-CSS"
+                >
+                  <span
+                    class="sc-fAUdSK hVECkn"
+                  >
+                    <span
+                      class="sc-dntaoT cxMXjn css"
+                    >
+                      <img
+                        alt=""
+                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-css.svg"
+                      />
+                    </span>
+                    CSS
+                  </span>
+                </button>
+                <button
+                  class="sc-kLhKbu dvlqpE"
+                  data-testid="subject-JavaScript"
+                >
+                  <span
+                    class="sc-fAUdSK hVECkn"
+                  >
+                    <span
+                      class="sc-dntaoT cxMXjn javascript"
+                    >
+                      <img
+                        alt=""
+                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-js.svg"
+                      />
+                    </span>
+                    JavaScript
+                  </span>
+                </button>
+                <button
+                  class="sc-kLhKbu dvlqpE"
+                  data-testid="subject-Accessibility"
+                >
+                  <span
+                    class="sc-fAUdSK hVECkn"
+                  >
+                    <span
+                      class="sc-dntaoT cxMXjn accessibility"
+                    >
+                      <img
+                        alt=""
+                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-accessibility.svg"
+                      />
+                    </span>
+                    Accessibility
+                  </span>
+                </button>
+                <button
+                  class="sc-kLhKbu dvlqpE"
+                  data-testid="subject-React"
+                >
+                  <span
+                    class="sc-fAUdSK hVECkn"
+                  >
+                    <span
+                      class="sc-dntaoT cxMXjn react"
+                    >
+                      <img
+                        alt=""
+                        src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-react.svg"
+                      />
+                    </span>
+                    React
+                  </span>
+                </button>
               </div>
             </div>
-            <div>
-              <button
-                class="sc-kLhKbu dvlqpE"
-                data-testid="subject-HTML"
-              >
-                <div
-                  class="sc-fAUdSK jdnumO"
-                >
-                  <div
-                    class="sc-dntaoT cxMXjn html"
-                  >
-                    <img
-                      alt=""
-                      src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-html.svg"
-                    />
-                  </div>
-                  HTML
-                </div>
-              </button>
-              <button
-                class="sc-kLhKbu dvlqpE"
-                data-testid="subject-CSS"
-              >
-                <div
-                  class="sc-fAUdSK jdnumO"
-                >
-                  <div
-                    class="sc-dntaoT cxMXjn css"
-                  >
-                    <img
-                      alt=""
-                      src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-css.svg"
-                    />
-                  </div>
-                  CSS
-                </div>
-              </button>
-              <button
-                class="sc-kLhKbu dvlqpE"
-                data-testid="subject-JavaScript"
-              >
-                <div
-                  class="sc-fAUdSK jdnumO"
-                >
-                  <div
-                    class="sc-dntaoT cxMXjn javascript"
-                  >
-                    <img
-                      alt=""
-                      src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-js.svg"
-                    />
-                  </div>
-                  JavaScript
-                </div>
-              </button>
-              <button
-                class="sc-kLhKbu dvlqpE"
-                data-testid="subject-Accessibility"
-              >
-                <div
-                  class="sc-fAUdSK jdnumO"
-                >
-                  <div
-                    class="sc-dntaoT cxMXjn accessibility"
-                  >
-                    <img
-                      alt=""
-                      src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-accessibility.svg"
-                    />
-                  </div>
-                  Accessibility
-                </div>
-              </button>
-              <button
-                class="sc-kLhKbu dvlqpE"
-                data-testid="subject-React"
-              >
-                <div
-                  class="sc-fAUdSK jdnumO"
-                >
-                  <div
-                    class="sc-dntaoT cxMXjn react"
-                  >
-                    <img
-                      alt=""
-                      src="file:///Users/konstantingolubkov/Desktop/quiz-app/src/assets/icon-react.svg"
-                    />
-                  </div>
-                  React
-                </div>
-              </button>
-            </div>
-          </div>
+          </main>
         </div>
       </div>,
       "debug": [Function],
